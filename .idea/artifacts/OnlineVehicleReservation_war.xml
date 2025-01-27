@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="OnlineVehicleReservation:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>OnlineVehicleReservation</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="OnlineVehicleReservation-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="OnlineVehicleReservation:war exploded" />
+    </root>
+  </artifact>
+</component>
