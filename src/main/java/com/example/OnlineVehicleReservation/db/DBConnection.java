@@ -16,12 +16,15 @@ public class DBConnection {
             throwables.printStackTrace();
         }
     }
+
     public static DBConnection getInstance() {
-        return (null == dbConnection) ? dbConnection = new DBConnection() : dbConnection;
+        if (dbConnection == null) {
+            dbConnection = new DBConnection();
+        }
+        return dbConnection;
     }
+
     public Connection getConnection() {
         return connection;
     }
-
-
 }
