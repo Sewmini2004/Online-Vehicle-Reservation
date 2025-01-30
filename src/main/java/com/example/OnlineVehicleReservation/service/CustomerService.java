@@ -57,7 +57,7 @@ public class CustomerService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null; // If no customer is found
+        return null;
     }
 
     public boolean updateCustomer(Customer customer) {
