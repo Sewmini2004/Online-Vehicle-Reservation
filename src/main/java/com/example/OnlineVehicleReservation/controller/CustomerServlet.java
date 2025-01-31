@@ -2,6 +2,7 @@ package com.example.OnlineVehicleReservation.controller;
 
 import com.example.OnlineVehicleReservation.model.Customer;
 import com.example.OnlineVehicleReservation.service.CustomerService;
+import com.example.OnlineVehicleReservation.service.impl.CustomerServiceImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -17,7 +18,7 @@ import java.io.IOException;
 
         @Override
         public void init() throws ServletException {
-            customerService = new CustomerService();
+            customerService = new CustomerServiceImpl();
         }
 
         @Override
@@ -30,6 +31,9 @@ import java.io.IOException;
             String email = request.getParameter("email");
             int userId = Integer.parseInt(request.getParameter("userId"));
 
+            // Dto wlta wens wenn ona manika mokda presentation layer -> service layer ekta data huwamaru wenne
+            // DTO (Data Transfer Object) wlim
+            // CustomerDto
             Customer customer = new Customer(0, userId, name, address, nic, phoneNumber, registrationDate, email);
 
             if (customerService.addCustomer(customer)) {
